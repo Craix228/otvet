@@ -1,0 +1,10 @@
+<launch>
+  <group ns='namespace'>
+   <node name='poly' pkg='super_sasha_study_pkg' type='poly.py' output='screen'/>
+   <node name='sum' pkg='super_sasha_study_pkg' type='sum.py' output='screen'/>
+  </group>
+   <node name='req' pkg='super_sasha_study_pkg' type='req.py' output='screen' >
+    <remap from='reqpoly' to='namespace/reqpoly' />
+    <remap from='sumreq' to='namespace/sumreq' />
+  </node>
+</launch>
